@@ -1,5 +1,6 @@
 import ey from "@/assets/EY-Financial-Modelling.pdf.asset.json";
 import nism from "@/assets/NISM-Certificate.pdf.asset.json";
+import lpuCert from "@/assets/LPU-Financial-Modelling-Certificate.png.asset.json";
 import { Reveal } from "./Reveal";
 
 const certs = [
@@ -20,9 +21,9 @@ const certs = [
   {
     no: "03",
     org: "Lovely Professional University",
-    title: "Financial Modelling Using Excel and AI",
-    meta: "Mar 2026 · Excel & AI",
-    url: null,
+    title: "Applied Financial Modelling Using Excel and AI",
+    meta: "Feb — Mar 2026 · Grade B · Excel & AI",
+    url: lpuCert.url,
   },
 ];
 
