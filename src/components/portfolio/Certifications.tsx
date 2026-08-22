@@ -29,7 +29,7 @@ const certs = [
 
 export function Certifications() {
   return (
-    <section id="certifications" className="border-t border-border bg-paper py-24 md:py-36">
+    <section id="certifications" className="sec-dark border-t border-border py-24 md:py-36">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <Reveal>
           <p className="label-xs">08 — Certifications</p>
@@ -38,33 +38,39 @@ export function Certifications() {
           </h2>
         </Reveal>
 
-        <div className="mt-16">
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
           {certs.map((c, i) => (
             <Reveal key={c.no} delay={i * 100}>
-              <div className="grid items-center gap-5 border-t border-border py-9 md:grid-cols-[0.1fr_0.55fr_0.2fr_0.15fr] md:gap-8">
-                <p className="display text-3xl text-lavender">{c.no}</p>
+              <article className="group flex h-full flex-col justify-between border border-border bg-paper p-8 transition-all duration-500 ease-out hover:-translate-y-2 hover:border-lavender hover:shadow-[0_30px_70px_-40px_rgba(184,154,207,0.75)]">
                 <div>
-                  <p className="label-xs">{c.org}</p>
-                  <p className="display mt-2 text-xl md:text-2xl">{c.title}</p>
+                  <p className="display num-zoom text-4xl text-lavender">{c.no}</p>
+                  <p className="label-xs mt-8">{c.org}</p>
+                  <h3 className="display mt-3 text-xl transition-transform duration-500 ease-out group-hover:translate-x-1 md:text-2xl">
+                    {c.title}
+                  </h3>
+                  <p className="label-xs mt-4">{c.meta}</p>
                 </div>
-                <p className="label-xs">{c.meta}</p>
-                <div className="md:text-right">
+
+                <div className="mt-10">
                   {c.url ? (
                     <a
                       href={c.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="label-xs inline-block border border-border px-4 py-3 text-foreground transition-colors duration-300 hover:border-foreground"
+                      className="label-xs inline-flex items-center gap-2 border-b border-border pb-2 text-foreground transition-colors duration-300 hover:border-lavender"
                     >
-                      Credential ↗
+                      Credential
+                      <span className="text-lavender transition-transform duration-300 group-hover:translate-x-1">
+                        ↗
+                      </span>
                     </a>
                   ) : (
                     <span className="label-xs inline-block border border-dashed border-border px-4 py-3">
-                      Certificate file not provided
+                      Placeholder — certificate file not provided
                     </span>
                   )}
                 </div>
-              </div>
+              </article>
             </Reveal>
           ))}
         </div>
