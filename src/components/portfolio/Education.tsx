@@ -53,7 +53,7 @@ export function Education() {
         <div className="mt-16">
           {items.map((it, i) => (
             <Reveal key={it.school} delay={i * 100}>
-              <div className="grid items-center gap-6 border-t border-border py-10 md:grid-cols-[0.24fr_0.56fr_0.2fr] md:gap-10">
+              <div className="group grid items-center gap-6 border-t border-border px-3 py-10 transition-all duration-500 ease-out hover:-translate-y-1 hover:border-lavender hover:bg-paper hover:shadow-[0_22px_50px_-38px_rgba(118,85,143,0.7)] md:grid-cols-[0.24fr_0.56fr_0.2fr] md:gap-10">
                 <p className="display text-2xl md:text-[1.9rem]">{it.years}</p>
 
                 <div className="flex items-center gap-6">
@@ -62,18 +62,20 @@ export function Education() {
                     alt={it.alt}
                     width={64}
                     height={64}
-                    className="h-14 w-14 shrink-0 object-contain"
+                    className="h-14 w-14 shrink-0 object-contain transition-transform duration-500 ease-out group-hover:scale-115"
                   />
                   <div>
                     <p className="label-xs">{it.kicker}</p>
-                    <p className="display mt-2 text-2xl">{it.school}</p>
+                    <p className="display mt-2 origin-left text-2xl transition-transform duration-500 ease-out group-hover:scale-[1.04]">
+                      {it.school}
+                    </p>
                     <p className="mt-2 text-sm text-muted-foreground">{it.detail}</p>
                   </div>
                 </div>
 
                 <div className="md:pr-6 md:text-right">
                   <p className="label-xs">{it.scoreLabel}</p>
-                  <p className="display mt-2 text-3xl text-plum md:text-4xl">{it.score}</p>
+                  <p className="display num-zoom mt-2 text-3xl text-plum md:text-4xl">{it.score}</p>
                 </div>
               </div>
             </Reveal>
