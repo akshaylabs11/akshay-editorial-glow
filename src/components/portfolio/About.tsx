@@ -16,15 +16,16 @@ function Stat({
 }) {
   const value = useCountUp(target, active, decimals);
   return (
-    <div className="border-t border-border pt-5">
-      <p className="label-xs">{label}</p>
-      <p className="display mt-3 text-5xl md:text-6xl">
+    <div className="group border-t border-border pt-5 transition-colors duration-500 hover:border-lavender">
+      <p className="label-xs transition-colors duration-300 group-hover:text-plum">{label}</p>
+      <p className="display num-zoom mt-3 text-5xl md:text-6xl">
         {value}
         <span className="em-lav">{suffix}</span>
       </p>
     </div>
   );
 }
+
 
 export function About() {
   const { ref, inView } = useInView<HTMLDivElement>(0.3);

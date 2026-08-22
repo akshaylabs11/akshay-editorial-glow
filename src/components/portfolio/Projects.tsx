@@ -1,6 +1,23 @@
+import business from "@/assets/project-business.jpg.asset.json";
+import banks from "@/assets/project-banks.jpg.asset.json";
+import wellness from "@/assets/project-wellness.jpg.asset.json";
+import quiz from "@/assets/project-quiz.jpg.asset.json";
 import { Reveal } from "./Reveal";
 
-const projects = [
+type Project = {
+  no: string;
+  category: string;
+  title: string;
+  date: string;
+  points: string[];
+  tools: string[];
+  flowLabels: string[];
+  image?: string;
+  imageAlt?: string;
+  frame: string;
+};
+
+const projects: Project[] = [
   {
     no: "01",
     category: "Financial Modelling",
@@ -12,6 +29,9 @@ const projects = [
     ],
     tools: ["Excel", "Financial Modelling", "Variance Analysis", "Competitor Benchmarking"],
     flowLabels: ["Revenue", "Costs", "Break-even", "Decision"],
+    image: business.url,
+    imageAlt: "Business planning charts and analysis worksheet",
+    frame: "rounded-[2rem]",
   },
   {
     no: "02",
@@ -24,6 +44,9 @@ const projects = [
     ],
     tools: ["Excel", "Ratio Analysis", "Budgeting & Forecasting", "Risk Metrics"],
     flowLabels: ["ROA", "ROE", "Efficiency", "Risk"],
+    image: banks.url,
+    imageAlt: "Financial market data screen with price movements",
+    frame: "rounded-[999px_999px_2rem_2rem]",
   },
   {
     no: "03",
@@ -35,6 +58,9 @@ const projects = [
     ],
     tools: ["Problem Framing", "Pitching", "Presentation Skills"],
     flowLabels: ["Need", "Concept", "Pitch"],
+    image: wellness.url,
+    imageAlt: "Health app categories displayed on a smartphone",
+    frame: "rounded-[2rem_2rem_6rem_2rem]",
   },
   {
     no: "04",
@@ -46,6 +72,9 @@ const projects = [
     ],
     tools: ["Analytical Thinking", "Business Knowledge", "Problem Solving"],
     flowLabels: ["Case", "Analysis", "Answer"],
+    image: quiz.url,
+    imageAlt: "Hand writing answers on a printed question sheet",
+    frame: "rounded-[6rem_2rem_2rem_2rem]",
   },
   {
     no: "05",
@@ -59,12 +88,13 @@ const projects = [
     ],
     tools: ["Profile Review", "Personal Branding", "Peer Guidance", "Team Collaboration"],
     flowLabels: ["Student", "Profile Review", "Feedback", "Improvement"],
+    frame: "rounded-[2rem]",
   },
 ];
 
 export function Projects() {
   return (
-    <section id="projects" className="border-t border-border py-24 md:py-36">
+    <section id="projects" className="sec-dark border-t border-border py-24 md:py-36">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <Reveal>
           <p className="label-xs">05 — Projects</p>
@@ -76,13 +106,45 @@ export function Projects() {
         <div className="mt-16">
           {projects.map((p) => (
             <Reveal key={p.no}>
-              <article className="grid gap-8 border-t border-border py-12 md:grid-cols-[0.12fr_0.44fr_0.44fr] md:gap-10">
-                <p className="display text-4xl text-lavender md:text-5xl">{p.no}</p>
+              <article className="group grid gap-8 border-t border-border py-12 transition-colors duration-500 hover:border-lavender md:grid-cols-[0.34fr_0.32fr_0.34fr] md:gap-10">
+                <div>
+                  <div className="flex items-baseline gap-5">
+                    <p className="display num-zoom text-4xl text-lavender md:text-5xl">{p.no}</p>
+                    <p className="label-xs">{p.category}</p>
+                  </div>
+
+                  {p.image ? (
+                    <div
+                      className={`mt-6 overflow-hidden border border-border ${p.frame} transition-shadow duration-700 ease-out group-hover:shadow-[0_28px_70px_-40px_rgba(184,154,207,0.7)]`}
+                    >
+                      <img
+                        src={p.image}
+                        alt={p.imageAlt}
+                        loading="lazy"
+                        className="h-56 w-full object-cover transition-transform duration-[900ms] ease-out group-hover:translate-y-[-8px] group-hover:scale-[1.06] md:h-64"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className={`mt-6 flex h-56 items-center justify-center border border-dashed border-border px-6 text-center ${p.frame} md:h-64`}
+                    >
+                      <p className="label-xs">Placeholder — project image not provided</p>
+                    </div>
+                  )}
+                </div>
 
                 <div>
-                  <p className="label-xs">{p.category}</p>
-                  <h3 className="display mt-4 text-2xl md:text-[2rem]">{p.title}</h3>
+                  <h3 className="display text-2xl transition-transform duration-500 ease-out group-hover:translate-x-1 md:text-[2rem]">
+                    {p.title}
+                  </h3>
                   <p className="label-xs mt-4">{p.date}</p>
+                  <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+                    {p.tools.map((t) => (
+                      <span key={t} className="label-xs">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 <div>
@@ -93,13 +155,6 @@ export function Projects() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
-                    {p.tools.map((t) => (
-                      <span key={t} className="label-xs">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
                   <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-border pt-5">
                     {p.flowLabels.map((f, i) => (
                       <span key={f} className="flex items-center gap-3">

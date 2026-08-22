@@ -111,3 +111,48 @@
   opacity: 1;
   transform: none;
 }
+
+@utility sec-dark {
+  --background: oklch(0.155 0 0);
+  --foreground: oklch(1 0 0);
+  --paper: oklch(0.205 0 0);
+  --muted: oklch(0.22 0 0);
+  --muted-foreground: oklch(0.74 0.018 315);
+  --accent: oklch(0.24 0.01 310);
+  --border: oklch(0.31 0.012 310);
+  --plum: oklch(0.83 0.062 308);
+  --lavender: oklch(0.78 0.07 308);
+  --primary-foreground: oklch(0.12 0 0);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+@utility sec-lav {
+  --background: oklch(0.945 0.022 310);
+  --paper: oklch(0.968 0.014 310);
+  --border: oklch(0.868 0.028 310);
+  background-color: var(--background);
+}
+
+@utility num-zoom {
+  display: inline-block;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.35s ease,
+    letter-spacing 0.35s ease,
+    text-shadow 0.35s ease;
+  &:hover {
+    transform: scale(1.12);
+    color: var(--color-plum);
+    letter-spacing: 0.012em;
+    text-shadow: 0 6px 26px color-mix(in oklab, var(--color-lavender) 45%, transparent);
+  }
+}
+
+@utility portrait-arch {
+  border-radius: 999px 999px 20px 20px;
+}
+
+@utility portrait-organic {
+  border-radius: 46% 46% 34% 34% / 30% 30% 16% 16%;
+}

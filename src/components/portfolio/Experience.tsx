@@ -1,6 +1,19 @@
+import ezfinanz from "@/assets/ezfinanz.png.asset.json";
+import ncc from "@/assets/ncc.png.asset.json";
 import { Reveal } from "./Reveal";
 
-const roles = [
+type Item = {
+  company: string;
+  location: string;
+  role: string;
+  date: string;
+  points: string[];
+  areas: string[];
+  logo?: string;
+  logoAlt?: string;
+};
+
+const roles: Item[] = [
   {
     company: "EZFinanz (Sai Roshni Capital Pvt. Ltd)",
     location: "Hyderabad",
@@ -11,10 +24,12 @@ const roles = [
       "Analyzed and organized financial data using Excel to prepare internal reports, strengthen record maintenance, and support efficient tracking of finance-related activities.",
     ],
     areas: ["Finance Operations", "Excel", "Reporting", "Documentation Review"],
+    logo: ezfinanz.url,
+    logoAlt: "EZFinanz",
   },
 ];
 
-const voluntary = [
+const voluntary: Item[] = [
   {
     company: "Department Fest Organising Team",
     location: "",
@@ -36,15 +51,27 @@ const voluntary = [
       "Organized community-service and awareness initiatives, coordinating outreach activities and local participant engagement to support community-focused programs.",
     ],
     areas: ["Leadership", "Community Outreach", "Execution"],
+    logo: ncc.url,
+    logoAlt: "National Cadet Corps",
   },
 ];
 
-function Row({ item }: { item: (typeof roles)[number] }) {
+function Row({ item }: { item: Item }) {
   return (
-    <div className="group grid gap-6 border-t border-border py-10 md:grid-cols-[0.32fr_0.68fr] md:gap-10">
+    <div className="group grid gap-6 border-t border-border py-10 transition-colors duration-500 hover:border-lavender md:grid-cols-[0.32fr_0.68fr] md:gap-10">
       <div>
         <p className="label-xs">{item.date}</p>
-        <p className="display mt-3 text-2xl md:text-[1.75rem]">{item.company}</p>
+        <div className="mt-3 flex items-center gap-4">
+          {item.logo && (
+            <img
+              src={item.logo}
+              alt={item.logoAlt}
+              loading="lazy"
+              className="h-11 w-11 shrink-0 object-contain transition-transform duration-500 ease-out group-hover:scale-110"
+            />
+          )}
+          <p className="display text-2xl md:text-[1.75rem]">{item.company}</p>
+        </div>
         {item.location && <p className="label-xs mt-2">{item.location}</p>}
       </div>
       <div>
@@ -52,7 +79,7 @@ function Row({ item }: { item: (typeof roles)[number] }) {
         <ul className="mt-5 space-y-4">
           {item.points.map((p) => (
             <li key={p} className="flex gap-4 text-sm leading-relaxed text-muted-foreground">
-              <span className="mt-2 h-px w-5 shrink-0 bg-lavender" />
+              <span className="mt-2 h-px w-5 shrink-0 bg-lavender transition-all duration-500 group-hover:w-8" />
               <span>{p}</span>
             </li>
           ))}

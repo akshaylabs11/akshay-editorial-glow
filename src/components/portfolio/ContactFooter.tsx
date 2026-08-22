@@ -105,32 +105,37 @@ export function Contact() {
           </div>
 
           <Reveal delay={250} className="relative">
-            <div className="relative mx-auto max-w-[520px]">
+            <div className="group relative mx-auto max-w-[520px]">
               <div className="absolute -top-8 -right-4 hidden h-32 w-32 rounded-full border border-border md:block" />
               <div className="absolute -bottom-10 -left-6 hidden h-20 w-20 rounded-full border border-lavender/60 md:block" />
 
-              <div className="relative border border-border bg-paper px-8 py-12 md:px-12 md:py-16">
-                <p className="display text-center text-[clamp(4rem,12vw,7rem)] leading-none">
-                  AG<span className="em-lav">.</span>
-                </p>
-                <div className="mx-auto mt-8 h-px w-24 bg-lavender" />
-                <p className="label-xs mt-8 text-center">Akshay Girish</p>
-                <p className="label-xs mt-2 text-center">Finance × Analytics × Strategy</p>
-
-                <div className="mt-10 overflow-hidden">
-                  <img
-                    src={portrait.url}
-                    alt="Akshay Girish"
-                    loading="lazy"
-                    className="h-56 w-full object-cover object-top transition-transform duration-700 ease-out hover:scale-[1.04] md:h-64"
-                  />
+              <div className="portrait-organic relative overflow-hidden border border-border bg-accent shadow-[0_28px_80px_-45px_rgba(17,17,17,0.5)] transition-shadow duration-700 ease-out group-hover:shadow-[0_38px_100px_-40px_rgba(118,85,143,0.6)]">
+                <img
+                  src={portrait.url}
+                  alt="Akshay Girish"
+                  loading="lazy"
+                  className="h-[420px] w-full object-cover object-[center_top] contrast-[1.06] saturate-[0.92] transition-all duration-[1000ms] ease-out group-hover:translate-y-[-8px] group-hover:scale-[1.05] group-hover:contrast-[1.12] group-hover:saturate-100 md:h-[540px]"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(12,12,12,0.55)_100%)]" />
+                <div className="pointer-events-none absolute inset-0 opacity-25 mix-blend-soft-light transition-opacity duration-700 group-hover:opacity-45 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,0.35)_0px,rgba(255,255,255,0.35)_1px,transparent_1px,transparent_4px)]" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-6 md:p-8">
+                  <p className="label-xs text-white/80">Akshay Girish</p>
+                  <p className="label-xs mt-1 text-white/60">Finance × Analytics × Strategy</p>
                 </div>
               </div>
 
-              <dl className="mt-8 divide-y divide-border border-t border-border">
+              <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-2">
+                <span className="label-xs">Finance</span>
+                <span className="text-lavender">·</span>
+                <span className="label-xs">Analytics</span>
+                <span className="text-lavender">·</span>
+                <span className="label-xs">Strategy</span>
+              </div>
+
+              <dl className="mt-6 divide-y divide-border border-t border-border">
                 {flow.map((f) => (
                   <div key={f.no} className="flex items-baseline gap-6 py-4">
-                    <dt className="display text-xl text-lavender">{f.no}</dt>
+                    <dt className="display num-zoom text-xl text-lavender">{f.no}</dt>
                     <dd className="label-xs">{f.text}</dd>
                   </div>
                 ))}
