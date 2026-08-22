@@ -4,7 +4,7 @@ const flow = ["Commerce", "Finance", "Analytics", "Strategy"];
 
 export function Story() {
   return (
-    <section className="border-t border-border bg-paper py-24 md:py-36">
+    <section className="sec-dark border-t border-border py-24 md:py-36">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <Reveal>
           <p className="label-xs">02 — The turn</p>
@@ -21,11 +21,13 @@ export function Story() {
           {flow.map((step, i) => (
             <div key={step} className="flex items-center gap-6 md:flex-1 md:gap-4">
               <Reveal delay={i * 140} className="flex-1">
-                <div className="border-t border-foreground pt-4">
-                  <span className="label-xs text-foreground">
+                <div className="group border-t border-foreground pt-4">
+                  <span className="label-xs num-zoom text-foreground">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="display mt-2 text-2xl md:text-3xl">{step}</p>
+                  <p className="display mt-2 text-2xl transition-transform duration-500 ease-out group-hover:translate-x-1 md:text-3xl">
+                    {step}
+                  </p>
                 </div>
               </Reveal>
               {i < flow.length - 1 && (
@@ -64,7 +66,13 @@ export function CurrentMba() {
             ].map(([k, v]) => (
               <div key={k} className="flex items-baseline justify-between gap-6 py-5">
                 <dt className="label-xs">{k}</dt>
-                <dd className="text-right font-serif text-lg md:text-xl">{v}</dd>
+                <dd
+                  className={`text-right font-serif text-lg md:text-xl ${
+                    k === "CGPA" ? "num-zoom text-2xl md:text-3xl" : ""
+                  }`}
+                >
+                  {v}
+                </dd>
               </div>
             ))}
           </dl>
