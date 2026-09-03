@@ -43,8 +43,7 @@ export function Hero() {
               </a>
               <a
                 href={cvAsset.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                download="Akshay-Girish-CV-2026.pdf"
                 className="label-xs border border-border px-6 py-4 text-foreground transition-all duration-300 hover:border-foreground"
               >
                 Download CV ↗
@@ -76,13 +75,13 @@ export function Hero() {
             <div className="absolute -top-6 -left-8 hidden h-32 w-32 rounded-full border border-border md:block" />
             <div className="absolute -right-6 bottom-16 hidden h-20 w-20 rounded-full border border-lavender/60 md:block" />
 
-            <div className="portrait-arch relative overflow-hidden border border-border bg-accent shadow-[0_24px_70px_-40px_rgba(17,17,17,0.45)] transition-shadow duration-700 ease-out group-hover:shadow-[0_34px_90px_-38px_rgba(118,85,143,0.55)]">
+            <div className="portrait-editorial relative overflow-hidden border border-border bg-accent shadow-[0_24px_70px_-40px_rgba(17,17,17,0.45)] transition-shadow duration-700 ease-out group-hover:shadow-[0_34px_90px_-38px_rgba(118,85,143,0.55)]">
               <img
                 src={portrait.url}
-                alt="Akshay Girish"
+                alt="Akshay Girish – Finance and Analytics"
                 width={1136}
                 height={1440}
-                className="h-[460px] w-full object-cover object-[center_top] transition-transform duration-[900ms] ease-out group-hover:translate-y-[-6px] group-hover:scale-[1.04] md:h-[620px]"
+                className="h-[460px] w-full object-cover object-[center_18%] transition-transform duration-[900ms] ease-out group-hover:translate-y-[-6px] group-hover:scale-[1.035] md:h-[620px]"
               />
             </div>
 

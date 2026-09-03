@@ -53,13 +53,13 @@ export function Education() {
         <div className="mt-16">
           {items.map((it, i) => (
             <Reveal key={it.school} delay={i * 100}>
-              <div className="group grid items-center gap-6 border-t border-border px-3 py-10 transition-all duration-500 ease-out hover:-translate-y-1 hover:border-lavender hover:bg-paper hover:shadow-[0_22px_50px_-38px_rgba(118,85,143,0.7)] md:grid-cols-[0.24fr_0.56fr_0.2fr] md:gap-10">
+              <div className="group grid origin-center items-center gap-6 border-t border-border px-3 py-10 transition-all duration-500 ease-out hover:z-10 hover:scale-[1.012] hover:border-lavender hover:bg-paper hover:shadow-[0_22px_50px_-38px_rgba(118,85,143,0.7)] md:grid-cols-[0.24fr_0.56fr_0.2fr] md:gap-10">
                 <p className="display text-2xl md:text-[1.9rem]">{it.years}</p>
 
                 <div className="flex items-center gap-6">
                   <img
                     src={it.logo}
-                    alt={it.alt}
+                    alt={`${it.alt} logo`}
                     width={64}
                     height={64}
                     className="h-14 w-14 shrink-0 object-contain transition-transform duration-500 ease-out group-hover:scale-115"
