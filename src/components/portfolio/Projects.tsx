@@ -2,6 +2,8 @@ import business from "@/assets/project-business.jpg.asset.json";
 import banks from "@/assets/project-banks.jpg.asset.json";
 import wellness from "@/assets/project-wellness.jpg.asset.json";
 import quiz from "@/assets/project-quiz.jpg.asset.json";
+import { Button } from "@/components/ui/button";
+import { MediaLightbox } from "./MediaLightbox";
 import { Reveal } from "./Reveal";
 
 type Project = {
@@ -114,16 +116,29 @@ export function Projects() {
                   </div>
 
                   {p.image ? (
-                    <div
-                      className={`mt-6 overflow-hidden border border-border ${p.frame} transition-shadow duration-700 ease-out group-hover:shadow-[0_28px_70px_-40px_rgba(184,154,207,0.7)]`}
+                    <MediaLightbox
+                      src={p.image}
+                      title={p.title}
+                      description={p.imageAlt ?? p.title}
+                      kind="image"
                     >
-                      <img
-                        src={p.image}
-                        alt={p.imageAlt}
-                        loading="lazy"
-                        className="h-56 w-full object-cover transition-transform duration-[900ms] ease-out group-hover:translate-y-[-8px] group-hover:scale-[1.06] md:h-64"
-                      />
-                    </div>
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        className={`group/image relative mt-6 block h-56 w-full overflow-hidden border border-border p-0 md:h-64 ${p.frame} transition-shadow duration-500 ease-out hover:bg-transparent group-hover:shadow-[0_28px_70px_-40px_rgba(184,154,207,0.7)]`}
+                        aria-label={`View image for ${p.title}`}
+                      >
+                        <img
+                          src={p.image}
+                          alt={p.imageAlt}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover/image:-translate-y-1 group-hover/image:scale-[1.045]"
+                        />
+                        <span className="label-xs absolute inset-x-0 bottom-0 translate-y-full bg-paper/90 px-5 py-4 text-left text-foreground backdrop-blur-sm transition-transform duration-500 ease-out group-hover/image:translate-y-0 group-focus-visible/image:translate-y-0">
+                          View image ↗
+                        </span>
+                      </Button>
+                    </MediaLightbox>
                   ) : (
                     <div
                       className={`mt-6 flex h-56 items-center justify-center border border-dashed border-border px-6 text-center ${p.frame} md:h-64`}
