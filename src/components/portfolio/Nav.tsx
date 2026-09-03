@@ -58,8 +58,7 @@ export function Nav() {
             <li>
               <a
                 href={cvAsset.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                download="Akshay-Girish-CV-2026.pdf"
                 className="label-xs border border-foreground px-4 py-2.5 text-foreground transition-colors duration-300 hover:bg-foreground hover:text-primary-foreground"
               >
                 Download Resume ↗
@@ -95,8 +94,7 @@ export function Nav() {
             <li>
               <a
                 href={cvAsset.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                download="Akshay-Girish-CV-2026.pdf"
                 className="label-xs text-plum"
               >
                 Download Resume ↗

@@ -12,7 +12,7 @@ const rows = [
   {
     label: "LinkedIn",
     value: "View LinkedIn profile",
-    href: "https://www.linkedin.com/in/akshay-girish1",
+    href: "https://www.linkedin.com/in/akshay-girish1/",
   },
   { label: "Resume", value: "Download CV", href: cvAsset.url },
 ];
@@ -58,6 +58,7 @@ export function Contact() {
                         ? "noopener noreferrer"
                         : undefined
                     }
+                    download={r.label === "Resume" ? "Akshay-Girish-CV-2026.pdf" : undefined}
                     className="group flex items-baseline justify-between gap-6 border-t border-border py-6 transition-all duration-[400ms] ease-out hover:border-lavender hover:pl-3"
                   >
                     <span className="label-xs transition-colors duration-300 group-hover:text-plum">
@@ -86,14 +87,13 @@ export function Contact() {
                 </a>
                 <a
                   href={cvAsset.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  download="Akshay-Girish-CV-2026.pdf"
                   className="label-xs border border-border px-6 py-4 text-foreground transition-colors duration-300 hover:border-foreground"
                 >
                   Download CV ↗
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/akshay-girish1"
+                  href="https://www.linkedin.com/in/akshay-girish1/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="label-xs border border-border px-6 py-4 text-foreground transition-colors duration-300 hover:border-foreground"
@@ -109,12 +109,12 @@ export function Contact() {
               <div className="absolute -top-8 -right-4 hidden h-32 w-32 rounded-full border border-border md:block" />
               <div className="absolute -bottom-10 -left-6 hidden h-20 w-20 rounded-full border border-lavender/60 md:block" />
 
-              <div className="portrait-organic relative overflow-hidden border border-border bg-accent shadow-[0_28px_80px_-45px_rgba(17,17,17,0.5)] transition-shadow duration-700 ease-out group-hover:shadow-[0_38px_100px_-40px_rgba(118,85,143,0.6)]">
+              <div className="portrait-editorial-final relative overflow-hidden border border-border bg-accent shadow-[0_28px_80px_-45px_rgba(17,17,17,0.5)] transition-shadow duration-700 ease-out group-hover:shadow-[0_38px_100px_-40px_rgba(118,85,143,0.6)]">
                 <img
                   src={portrait.url}
-                  alt="Akshay Girish"
+                  alt="Akshay Girish – Finance, Analytics and Strategy"
                   loading="lazy"
-                  className="h-[420px] w-full object-cover object-[center_top] contrast-[1.06] saturate-[0.92] transition-all duration-[1000ms] ease-out group-hover:translate-y-[-8px] group-hover:scale-[1.05] group-hover:contrast-[1.12] group-hover:saturate-100 md:h-[540px]"
+                  className="h-[420px] w-full object-cover object-[center_16%] contrast-[1.06] saturate-[0.92] transition-all duration-[1000ms] ease-out group-hover:translate-y-[-8px] group-hover:scale-[1.04] group-hover:contrast-[1.12] group-hover:saturate-100 md:h-[540px]"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(12,12,12,0.55)_100%)]" />
                 <div className="pointer-events-none absolute inset-0 opacity-25 mix-blend-soft-light transition-opacity duration-700 group-hover:opacity-45 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,0.35)_0px,rgba(255,255,255,0.35)_1px,transparent_1px,transparent_4px)]" />
