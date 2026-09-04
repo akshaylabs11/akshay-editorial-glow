@@ -1,4 +1,5 @@
 import ezfinanz from "@/assets/ezfinanz.png.asset.json";
+import loyola from "@/assets/loyola.png.asset.json";
 import ncc from "@/assets/ncc.png.asset.json";
 import { Reveal } from "./Reveal";
 
@@ -40,6 +41,8 @@ const voluntary: Item[] = [
       "Managed timelines, resources, and team responsibilities, keeping event activities aligned and ensuring timely execution across multiple operational requirements.",
     ],
     areas: ["Coordination", "Logistics", "Team Collaboration"],
+    logo: loyola.url,
+    logoAlt: "Loyola Academy",
   },
   {
     company: "National Cadet Corps (NCC)",
