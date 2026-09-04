@@ -111,7 +111,9 @@ export function Projects() {
               <article className="group grid gap-8 border-t border-border py-12 transition-colors duration-500 hover:border-lavender md:grid-cols-[0.34fr_0.32fr_0.34fr] md:gap-10">
                 <div>
                   <div className="flex items-baseline gap-5">
-                    <p className="display num-zoom text-4xl text-lavender md:text-5xl">{p.no}</p>
+                    <p className="display num-zoom text-4xl text-lavender transition-all duration-500 ease-out group-hover:scale-[1.08] group-hover:text-plum md:text-5xl">
+                      {p.no}
+                    </p>
                     <p className="label-xs">{p.category}</p>
                   </div>
 
@@ -149,7 +151,7 @@ export function Projects() {
                 </div>
 
                 <div>
-                  <h3 className="display text-2xl transition-transform duration-500 ease-out group-hover:translate-x-1 md:text-[2rem]">
+                  <h3 className="display text-2xl transition-all duration-500 ease-out group-hover:translate-x-1 group-hover:text-lavender md:text-[2rem]">
                     {p.title}
                   </h3>
                   <p className="label-xs mt-4">{p.date}</p>
