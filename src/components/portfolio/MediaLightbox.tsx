@@ -30,7 +30,7 @@ export function MediaLightbox({
     <Dialog onOpenChange={(open) => !open && setZoom(1)}>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="flex h-[92dvh] w-[calc(100vw-2rem)] max-w-6xl grid-rows-none flex-col gap-4 overflow-hidden rounded-none border-border bg-paper p-4 sm:rounded-none md:p-6">
-        <div className="flex min-w-0 items-center justify-between gap-12 pr-10">
+        <div className="flex min-w-0 flex-wrap items-center justify-between gap-3 pr-10 sm:flex-nowrap sm:gap-8">
           <div className="min-w-0">
             <DialogTitle className="display truncate text-xl font-normal md:text-2xl">
               {title}
