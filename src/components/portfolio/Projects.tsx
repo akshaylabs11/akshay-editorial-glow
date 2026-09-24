@@ -141,13 +141,7 @@ export function Projects() {
                         </span>
                       </Button>
                     </MediaLightbox>
-                  ) : (
-                    <div
-                      className={`mt-6 flex h-56 items-center justify-center border border-dashed border-border px-6 text-center ${p.frame} md:h-64`}
-                    >
-                      <p className="label-xs">Placeholder — project image not provided</p>
-                    </div>
-                  )}
+                  ) : null}
                 </div>
 
                 <div>

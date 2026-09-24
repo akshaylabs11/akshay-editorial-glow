@@ -119,7 +119,7 @@ export function Experience() {
         </div>
 
         <Reveal>
-          <p className="label-xs mt-20">Voluntary experience &amp; community development</p>
+          <h3 className="label-xs mt-20">Voluntary experience &amp; community development</h3>
         </Reveal>
         <div className="mt-8">
           {voluntary.map((r, i) => (
