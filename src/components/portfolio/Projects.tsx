@@ -2,6 +2,7 @@ import business from "@/assets/project-business.jpg.asset.json";
 import banks from "@/assets/project-banks.jpg.asset.json";
 import wellness from "@/assets/project-wellness.jpg.asset.json";
 import quiz from "@/assets/project-quiz.jpg.asset.json";
+import linkedinBooth from "@/assets/linkedin-booth-group.jpeg.asset.json";
 import { Button } from "@/components/ui/button";
 import { MediaLightbox } from "./MediaLightbox";
 import { Reveal } from "./Reveal";
@@ -90,6 +91,8 @@ const projects: Project[] = [
     ],
     tools: ["Profile Review", "Personal Branding", "Peer Guidance", "Team Collaboration"],
     flowLabels: ["Student", "Profile Review", "Feedback", "Improvement"],
+    image: linkedinBooth.url,
+    imageAlt: "Five students collaborating at the LinkedIn profile optimization booth",
     frame: "rounded-[2rem]",
   },
 ];
@@ -127,7 +130,7 @@ export function Projects() {
                       <Button
                         type="button"
                         variant="ghost"
-                        className={`group/image relative mt-6 block h-56 w-full overflow-hidden border border-border p-0 md:h-64 ${p.frame} transition-shadow duration-500 ease-out hover:bg-transparent group-hover:shadow-[0_28px_70px_-40px_rgba(184,154,207,0.7)]`}
+                        className={`group/image relative mx-auto mt-6 block h-56 w-full overflow-hidden border border-border p-0 md:h-64 ${p.no === "05" ? "aspect-[3/4] h-auto max-h-96 max-w-72 bg-muted" : ""} ${p.frame} transition-shadow duration-500 ease-out hover:bg-transparent group-hover:shadow-[0_28px_70px_-40px_rgba(184,154,207,0.7)]`}
                         aria-label={`View image for ${p.title}`}
                       >
                         <img
@@ -141,13 +144,7 @@ export function Projects() {
                         </span>
                       </Button>
                     </MediaLightbox>
-                  ) : (
-                    <div
-                      className={`mt-6 flex h-56 items-center justify-center border border-dashed border-border px-6 text-center ${p.frame} md:h-64`}
-                    >
-                      <p className="label-xs">Placeholder — project image not provided</p>
-                    </div>
-                  )}
+                  ) : null}
                 </div>
 
                 <div>

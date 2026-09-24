@@ -1,0 +1,3 @@
+- [x] Confirm the actual five-person group photo was supplied.
+- [x] Connect the supplied photo to Project 05 while preserving the current layout, hover zoom, and lightbox.
+- [x] Verify the corrected voluntary heading and Project 05 image in the preview.
